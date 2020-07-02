@@ -1,10 +1,14 @@
 #!/bin/bash -x
+#constants
+WAGE_PER_HR=20
 
 attendance=$((RANDOM%3))
 
-if [[ $attendance -ne 0 ]]
+if [[ $attendance -eq 2 ]]
 then
-	echo "Employee is present"
+	workHour=8
 else
-	echo "Employee is absent"
+	workHour=0
 fi
+emp_wage_perday=$(($WAGE_PER_HR*$workHour))
+echo "Employees per day pay is $emp_wage_perday"
