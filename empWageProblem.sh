@@ -25,7 +25,9 @@ do
 	((total_working_days++))
 	workingHrs=$( getWorkingHrs $((RANDOM%3)) )
 	total_working_hrs=$(($total_working_hrs+$workingHrs))
+	dailyWages[$total_working_days]=$(($workingHrs*$WAGE_PER_HR))
 done
 
 emp_wage_permonth=$(($total_working_hrs*$WAGE_PER_HR))
 echo "Employees per month pay is $emp_wage_permonth"
+echo "Employees per day pay list: ${dailyWages[@]}"
