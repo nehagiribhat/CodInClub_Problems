@@ -3,6 +3,7 @@
 WAGE_PER_HR=20
 FULL_TIME=2
 PART_TIME=1
+WORKING_DAYS_PER_MONTH=20
 
 attendance=$((RANDOM%3))
 
@@ -12,4 +13,5 @@ case $attendance in
 	*) workHour=0;;
 esac
 emp_wage_perday=$(($WAGE_PER_HR*$workHour))
-echo "Employees per day pay is $emp_wage_perday"
+emp_wage_permonth=$(($emp_wage_perday*$WORKING_DAYS_PER_MONTH))
+echo "Employees per month pay is $emp_wage_permonth"
