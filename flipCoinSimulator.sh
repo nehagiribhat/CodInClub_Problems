@@ -29,6 +29,14 @@ then
 	difference2=$((total_no_of_tails-total_no_of_heads))
 	if [ $difference1 -ge 2 -o $difference2 -ge 2 ]
 	then
+		if [ $total_no_of_heads -eq $flip ]
+		then
+        		difference=$((total_no_of_heads-total_no_of_tails))
+        		echo "Heads Wins by $difference"
+		else
+        		difference=$((total_no_of_tails-total_no_of_heads))
+        		echo "Tails Wins by $difference"
+		fi
 		((limit++))
 	else
 		echo "Minimum Difference NOT Reached"
@@ -36,14 +44,4 @@ then
 	fi
 else
 	echo "No TIE Occured"
-fi
-
-
-if [ $total_no_of_heads -eq $flip ]
-then
-        difference=$((total_no_of_heads-total_no_of_tails))
-        echo "Heads Wins by $difference"
-else
-        difference=$((total_no_of_tails-total_no_of_heads))
-        echo "Tails Wins by $difference"
 fi
