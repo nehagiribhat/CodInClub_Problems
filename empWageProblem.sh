@@ -30,4 +30,5 @@ done
 
 emp_wage_permonth=$(($total_working_hrs*$WAGE_PER_HR))
 echo "Employees per month pay is $emp_wage_permonth"
+echo "Employees per day list: ${!dailyWages[@]}"
 echo "Employees per day pay list: ${dailyWages[@]}"
