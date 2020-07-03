@@ -29,7 +29,7 @@ then
 	difference2=$((total_no_of_tails-total_no_of_heads))
 	if [ $difference1 -ge 2 -o $difference2 -ge 2 ]
 	then
-		if [ $total_no_of_heads -eq $flip ]
+		if [ $total_no_of_heads -gt $total_no_of_tails ]
 		then
         		difference=$((total_no_of_heads-total_no_of_tails))
         		echo "Heads Wins by $difference"
