@@ -1,12 +1,14 @@
 #!/bin/bash 
 shopt -s extglob
 
-read -p "Enter Your First Name (space) Last Name " firstName lastName
-read -p "Enter Email Id " emailId
+read -p "Enter Your First Name (space) Last Name " firstName lastName;
+read -p "Enter Email Id " emailId;
+read -p "Enter Mobile Number " mobNum;
 
 patFirstName="^[A-Z]{1}[A-Za-z]{2,}$"
 patLastName="^[A-Z]{1}[A-Za-z]{2,}$"
 patEmailId="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+patMobNumber="^[\+0-9]{2,3}[ ]?[0-9]{10}$"
 
 if [[ $firstName =~ $patFirstName ]]
 then
@@ -27,4 +29,11 @@ then
         echo "Email Id Accepted"
 else
         echo "Enter Valid Email Id"
+fi
+
+if [[ $mobNum =~ $patMobNumber ]]
+then
+        echo "Mobile Number Accepted"
+else
+        echo "Enter Valid Mobile Number"
 fi
