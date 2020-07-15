@@ -10,7 +10,7 @@ patFirstName="^[A-Z]{1}[A-Za-z]{2,}$"
 patLastName="^[A-Z]{1}[A-Za-z]{2,}$"
 patEmailId="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
 patMobNumber="^[0-9]{2,3}[ ]?[0-9]{10}$"
-patPassword="[0-9a-zA-Z]{7,}$"
+patPassword="(^[a-zA-Z][0-9]){7,}([A-Z])"
 
 if [[ $firstName =~ $patFirstName ]]
 then
